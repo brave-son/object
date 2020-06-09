@@ -10,27 +10,28 @@ import java.net.URLConnection;
 
 public class Http1 {
 	public static void main(String[] args) {
-		URL url= null;
-		URLConnection urlConnection =null;
-		InputStream in =null;
+		URL url = null;
+		URLConnection urlConnection = null;
+		InputStream in = null;
 		InputStreamReader isr = null;
 		BufferedReader reader = null;
-		
+
 		try {
 			url = new URL("\"http://ggoreb.com/http/list2.jsp");
-			 urlConnection = url.openConnection();
-			 in = urlConnection.getInputStream();
-			 isr = new InputStreamReader(in, "utf-8");
-			 reader = new BufferedReader(isr);
-			 while (true) {
-				 String data = reader.readLine();
-				 if(data == null) 
-					 break;
-				 System.out.println(data);			
-				 reader.close();
-				 isr.close();
-				 in.close();
-		}}catch (MalformedURLException e) {
+			urlConnection = url.openConnection();
+			in = urlConnection.getInputStream();
+			isr = new InputStreamReader(in, "utf-8");
+			reader = new BufferedReader(isr);
+			while (true) {
+				String data = reader.readLine();
+				if (data == null)
+					break;
+				System.out.println(data);
+				reader.close();
+				isr.close();
+				in.close();
+			}
+		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -42,8 +43,7 @@ public class Http1 {
 
 		// 한줄씩 가져오기
 
-		}
-		
+	}
 
 //		InputStreamReader isr = new InputStreamReader(in, "utf-8");
 //		BufferedReader reader = new BufferedReader(isr);
@@ -59,5 +59,4 @@ public class Http1 {
 //		isr.close();
 //		in.close();
 //		System.out.println(response);
-	}
-};
+}

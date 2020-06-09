@@ -2,6 +2,7 @@ package DB;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class In {
@@ -10,21 +11,19 @@ public class In {
 		try {
 			in = new FileInputStream("c:/dev/out.txt");
 			while (true) {
-				int data =in.read();
-				if (data == -1) 
+				int data = in.read();
+				if (data == -1)
 					break;
-					System.out.println(data);
+				System.out.println(data);
 			}
-		 catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-				
-			}
-			
-			
-		}
+
+	}
 
 }
